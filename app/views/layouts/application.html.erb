@@ -3,12 +3,18 @@
 <head>
   <title>편의점의 법칙 - 편법</title>
   
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- 배민 폰트 -->
+  <link href="http://cdn.rawgit.com/singihae/Webfonts/master/style.css" rel="stylesheet" type="text/css" />
   
+  <style type="text/css">
+  .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}
+  .hana{font-family:'BM HANNA','배달의민족 한나', sans-serif; }
+</style>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://cvs-ev-shnoah-1.c9.io/css/bootstrap.min.css">
+
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
@@ -21,6 +27,9 @@
 <%= render :partial => "/home/navbar" %>
 
 <%= yield %>
+
+
+<%= render :partial => "/home/bottom" %>
 
 </body>
 </html>

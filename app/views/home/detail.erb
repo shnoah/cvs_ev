@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+     
+        <legend><h1><font color="#DD4814"><strong><%= @this_post.post_title %></strong></font></h1></legend>
+     
+        <div class="row">
+            <div class="col-lg-6">
+            <img class="img-responsive" src="<%= @this_post.my_image.url %>">
+            </div>
+     
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <a href="#" class="btn  btn-lg btn-primary disabled">  
+                        <%if @this_post.store_info == "CU"%>
+                            CU
+                        <%elsif @this_post.store_info == "GS25"%>
+                            GS25
+                        <%elsif @this_post.store_info == "seveneleven"%>
+                            세븐일레븐
+                        <%else%>
+                            기타
+                        <%end%>
+                    </a>
+                    
+                    <a href="#" class="btn  btn-lg btn-success disabled">  
+                        <%if @this_post.prefer_time == "morning"%>
+                            아침
+                        <%elsif @this_post.prefer_time == "lunch"%>
+                            점심
+                        <%elsif @this_post.prefer_time == "dinner"%>
+                            저녁/야식
+                        <%else%>
+                            ?????
+                        <%end%>
+                    </a>
+                    
+                    <a href="#" class="btn  btn-lg btn-warning"><font color=white><%=@this_post.price%>원</font></a>
+                    
+                    <a href="#" class="btn  btn-lg btn-info"><%=@this_post.kcal%>kcal</a>
+                    </div>
+                </div>
+                
+                
+                <div class=row style="height:5px"></div> <!-- 여백 -->
+                
+                <div class="col-lg-12 well well-lg">
+                    <%= @this_post.post_content %>
+                    <div style="text-align:right">ID : <%= @this_post.post_name %>
+                    <%= @this_post.updated_at.in_time_zone("Seoul").strftime("%Y/%m/%d %I:%M%p")%></p>
+                    </div>
+                
+                    <div style="float: right;">
+                        <a href= "/home/modify/<%= @this_post.id%>" class="btn btn-primary btn-sm" role="button">글 수정</a>
+                        <a href = "/home/delete/<%= @this_post.id%>" class="btn btn-primary btn-sm" role="button">글 삭제</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12">리플</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div> 
+</div>
+
+
+<div class=row style="height:5px"></div> <!-- 여백 -->  
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    <!-- Buttons --> 
+    <center>
+    <a href="/" class="btn btn-primary" role="button">메인으로</a>
+    </center>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div style="height:100px;"></div> <!-- footer 여백 -->
+
+
+
+

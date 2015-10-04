@@ -1,0 +1,102 @@
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <form class="form-horizontal" action="/home/write_process" method="POST" enctype="multipart/form-data">
+          <fieldset>
+            <legend>글쓰기</legend>
+            
+            <div class="form-group">
+              <label class="col-lg-2 control-label">글쓴이</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="a_name" placeholder="ID" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">제품명</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" name="title" placeholder="제품명을 입력해주세요" required>
+              </div>
+
+              <label class="col-lg-2 control-label">카테고리</label>
+              <div class="col-lg-4">
+          <!--      <input type="text" class="form-control"  name="category" required> --> 
+                 <span class="input-group-addon">
+                    <input type="radio" name="category" value="lunchbox" aria-label="도시락"> 도시락
+                     <input type="radio" name="category" value="sandwitch" aria-label="샌드위치/햄버거"> 샌드위치/햄버거
+                      <input type="radio" name="category" value="bob" aria-label="주먹밥/김밥"> 주먹밥/김밥
+                  </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">판매처</label>
+              <div class="col-lg-4">
+            <!--    <input type="text" class="form-control"  name="store_info" required>-->
+                 <span class="input-group-addon">
+                    <input type="radio" name="store_info" value="CU" aria-label="CU"> CU
+                     <input type="radio" name="store_info" value="GS25" aria-label="GS25"> GS25
+                      <input type="radio" name="store_info" value="seveneleven" aria-label="7-11"> 세븐일레븐
+                  </span>
+            
+              </div>
+              <label class="col-lg-2 control-label">시간대</label>
+              <div class="col-lg-4">
+              <!--  <input type="text" class="form-control"  name="prefer_time"> -->
+                <span class="input-group-addon">
+                    <input type="radio" name="prefer_time" value="morning" aria-label="morning"> morning
+                     <input type="radio" name="prefer_time" value="lunch" aria-label="lunch"> lunch
+                      <input type="radio" name="prefer_time" value="dinner" aria-label="dinner"> dinner
+                  </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">가격</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control"  name="price" required>
+              </div>
+              <label class="col-lg-2 control-label">칼로리</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control"  name="kcal" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label">상세 설명</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" rows="3"  name="content" required></textarea>             
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">이미지 첨부</label>
+              <div class="col-lg-10">
+              <input type=file name="image_file">
+              <span class="help-block">캡처 이미지, 손으로 그린 그림 등 모두 가능합니다.</span>
+               </div>
+            </div>
+           
+      
+        
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <a href="/" class="btn btn-default" role="button">메인으로</a>
+                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="submit" class="btn btn-primary">등록</button>
+              </div>
+            </div>
+            
+          </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-2"></div>
+</div>    
+ 
