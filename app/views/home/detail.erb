@@ -36,7 +36,13 @@
                         <%end%>
                     </a>
                     
-                    <a href="#" class="btn  btn-lg btn-warning"><font color=white><%=@this_post.price%>원</font></a>
+                    <a href="#" class="btn  btn-lg btn-warning"><font color=white>
+                       <%if @this_post.price.length >= 4%>
+                            <%=@this_post.price.insert(1, ',') %>
+                        <%else%>
+                            <%=@this_post.price%>
+                        <%end%>
+                    원</font></a>
                     
                     <a href="#" class="btn  btn-lg btn-info"><%=@this_post.kcal%>kcal</a>
                     </div>

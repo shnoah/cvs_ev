@@ -10,22 +10,23 @@
 
 
 <!-- sdfadsfadf -->
-
-  
+<div class="col-md-1">  </div>
+<div class="col-md-10">  
       <div class="row">
         <% @posts.each do |item| %>
           <div class="col-md-3 col-md-offset-0 col-sm-12 col-xs-12 col-xs-offset-0">
+          
             <a href="/home/detail/<%=item.id%>">
-              <div class="thumbnail">
+              <div>
                 <%if item.my_image.url==nil%>
-                  <img style="border-radius: 20px; width: 100%;" src="/image/sample.png"/>
+                  <img style="border-radius: 20px;" width=400 height=400 src="/image/sample.png"/>
                 <% else %> 
                   <div class="photo_main">
-                      <img style="border-radius: 20px; " src="<%=item.my_image.url(:thumb)%>"/>   
+                      <img style="border-radius: 10px; "width=400 height=400 src="<%=item.my_image.url(:thumb)%>"/>   
                           <div class='photo_main_up'>
         
                                        <div class="col-lg-12">
-                                                <a href="#" class="btn  btn-lg btn-primary">  
+                                                <a href="#" class="btn   btn-primary">  
                                                     <%if item.store_info == "CU"%>
                                                         CU
                                                     <%elsif item.store_info == "GS25"%>
@@ -37,7 +38,7 @@
                                                     <%end%>
                                                 </a>
                                                 
-                                                <a href="#" class="btn  btn-lg btn-success">  
+                                                <a href="#" class="btn   btn-success">  
                                                     <%if item.prefer_time == "morning"%>
                                                         아침
                                                     <%elsif item.prefer_time == "lunch"%>
@@ -49,9 +50,15 @@
                                                     <%end%>
                                                 </a>
                                                 
-                                                <a href="#" class="btn  btn-lg btn-warning"><font color=white><%=item.price%>원</font></a>
+                                                <a href="#" class="btn   btn-warning"><font color=white>
+                                                <%if item.price.length >= 4%>
+                                                    <%=item.price.insert(1, ',') %>
+                                                <%else%>
+                                                    <%=item.price%>
+                                                <%end%>
+                                                원</font></a>
                                                 
-                                                <a href="#" class="btn  btn-lg btn-info"><%=item.kcal%>kcal</a>
+                                                <a href="#" class="btn   btn-info"><%=item.kcal%>kcal</a>
                                      </div>
                                      
                                     
@@ -62,18 +69,24 @@
                   </div>
                 <% end %>
                 
-                <div class="caption" style="padding-bottom: 0px;">
+                <div style="padding-bottom: 0px;">
               
                   <!-- title -->
                   <% unless item.post_title.length > 14 %>
-                    <h4 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title %></h4>
+                    <h2 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title %></h2>
                   <% else %>
-                    <h4 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title.first(13)+"..." %></h4>
+                    <h2 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title.first(13)+"..." %></h2>
                   <% end %>
                   
                   <!-- content -->
                   <div style="width:100%;height:20px">
-                  <h5 style="word-spacing: -2px; font-weight: 400; letter-spacing: 0px; color: black;font-size:100%" ><%= item.post_content.first(20)%></h5>
+                      <h4 style="word-spacing: -1px; font-weight: 400; letter-spacing: 0px; color: black;font-size:100%" >
+                          <% if item.post_content.length > 50 %>
+                              <%= item.post_content.first(50)%>..<a href="/home/detail/<%=item.id%>"><font color="#DD4814">더 읽기</font></a>
+                          <%else%>
+                             <%= item.post_content%>
+                          <%end%>
+                  </h4>
                   </div>
                   <div style="margin-top: 1px solid white;"></div>
                   <div style="font-weight: 700; color: *8E8E8E; margin-bottom: 1px solid black;">  
@@ -82,7 +95,7 @@
                
                    <!--Like -->
                   <div> 
-                  <hr style="margin: 13px 0px 13px 0px;">
+               
                     <div align="center">
                       &nbsp;<span style="font-size: 15px; padding-top: 10px; font-weight: 800;"><%= item.like %>&nbsp; </span>
                     </div>
@@ -95,18 +108,21 @@
           </div>
          <% end %>
       </div>
+    </div>
+    
+    <div class="col-md-1"> </div>
 
-<div class=row style="height:5px"></div> <!-- 여백 -->  
+<div style="height:5px"></div> <!-- 여백 -->  
 
 <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
     <!-- Buttons --> 
     <center>
     <a href="/home/write" class="btn btn-primary" role="button">글쓰기</a>
     </center>
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-md-4"></div>
 </div>
 
 <div style="height:100px;"></div> <!-- footer 여백 -->
