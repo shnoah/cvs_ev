@@ -87,9 +87,20 @@ class HomeController < ApplicationController
         @this_post.save          
         
        redirect_to action: "detail", id: @this_post.id
- 
-    
   end
+
+    def write_reply
+      
+      
+      
+        @my_reply = Reply.new
+        @my_reply.review_id = params[:review_id]
+        @my_reply.content = params[:myreply]
+        @my_reply.save
+        
+        redirect_to :back       
+    end
+
 
 
 end

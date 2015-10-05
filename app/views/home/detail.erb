@@ -63,7 +63,37 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-12">리플</div>
+                <!-- 리플 입력 창 -->
+                
+                   <form action = "/home/write_reply/" method="POST">
+                       <input type = "hidden" name = "review_id" value = "<%=@this_post.id%>">
+                       <div class="col-sm-10" style="padding;0px">
+                               <input class="form-control"  placeholder="리플을 달아주세요" type = "text" name="myreply">
+                       </div>
+                       <div class="col-sm-2">
+                            <input class="btn btn-primary" type = "submit" value = "Reply">
+                       </div>
+                   </form>
+                
+                <!-- 리플 출력 창 -->
+                <% @this_post.replies.each do |r| %>
+        
+                <div class=row>
+                    <div class="col-sm-11">
+                        <h4>USER / <%= r.content %></h4>
+                    </div>
+                    <div class="col-sm-1">
+                        <%= r.created_at.in_time_zone("Seoul").strftime("%Y/%m/%d %I:%M%p") %>
+                        <a href= "/kanu/modify_reply/<%= r.id %>">수정</a>/
+                        <a href = "/kanu/delete_reply/<%= r.id %>">삭제</a>
+                   </div>
+                </div>
+                
+                <hr>
+            
+                 <% end %>
+                       
+                
             </div>
         </div>
     </div>
