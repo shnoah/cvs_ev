@@ -45,6 +45,51 @@ class HomeController < ApplicationController
     
   end
   
+  def delete
+    @this_post = Review.find(params[:id])
+  end
   
+  def delete_process
+    @this_post = Review.find(params[:id]) 
+    match = params[:delete_password]
+        
+    if (@this_post.post_pwd==match)
+      @this_post.destroy
+    else
+      #패스워드 실패 시 안내 필요
+    end
+    
+    redirect_to '/'       
+
+  end
+
+  def modify
+    @this_post = Review.find(params[:id])
+  end
+  
+  def modify_process
+    @this_post = Review.find(params[:id]) 
+  end
+
+  def modify_confirm 
+
+        
+        @this_post = Review.find(params[:id]) 
+
+        @this_post.post_title =params[:title]
+        @this_post.post_content = params[:content]
+        @this_post.category = params[:category]
+        @this_post.store_info = params[:store_info]
+        @this_post.prefer_time = params[:prefer_time]
+        @this_post.price = params[:price]
+        @this_post.kcal = params[:kcal]
+        
+        @this_post.save          
+        
+       redirect_to action: "detail", id: @this_post.id
+ 
+    
+  end
+
 
 end

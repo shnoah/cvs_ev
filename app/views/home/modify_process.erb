@@ -1,0 +1,140 @@
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <form class="form-horizontal" action="/home/modify_confirm/<%=@this_post.id%>" method="POST" enctype="multipart/form-data">
+          <fieldset>
+            <legend>글 수정</legend>
+            
+            <div class="form-group">
+              <label class="col-lg-2 control-label">글쓴이</label>
+              <div class="col-lg-10">
+                <%=@this_post.post_name%>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">제품명</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" name="title" value="<%=@this_post.post_title%>" required>
+              </div>
+
+              <label class="col-lg-2 control-label">카테고리</label>
+              <div class="col-lg-4">
+          <!--      <input type="text" class="form-control"  name="category" required> --> 
+                 <span class="input-group-addon">
+                     <%if @this_post.category =="lunchbox"%>
+                       <input type="radio" name="category" value="lunchbox" checked aria-label="도시락"> 도시락
+                       <input type="radio" name="category" value="sandwitch" aria-label="샌드위치/햄버거"> 샌드위치/햄버거
+                       <input type="radio" name="category" value="bob" aria-label="주먹밥/김밥"> 주먹밥/김밥
+
+                     <%elsif @this_post.category == "sandwitch"%>
+                       <input type="radio" name="category" value="lunchbox" aria-label="도시락"> 도시락
+                       <input type="radio" name="category" value="sandwitch" checked aria-label="샌드위치/햄버거"> 샌드위치/햄버거
+                       <input type="radio" name="category" value="bob" aria-label="주먹밥/김밥"> 주먹밥/김밥
+
+                     <%elsif @this_post.category == "bob"%>
+                       <input type="radio" name="category" value="lunchbox" aria-label="도시락"> 도시락
+                       <input type="radio" name="category" value="sandwitch" aria-label="샌드위치/햄버거"> 샌드위치/햄버거
+                       <input type="radio" name="category" value="bob" checked aria-label="주먹밥/김밥"> 주먹밥/김밥
+
+                     <%else%>
+                       <input type="radio" name="category" value="lunchbox" aria-label="도시락"> 도시락
+                       <input type="radio" name="category" value="sandwitch" aria-label="샌드위치/햄버거"> 샌드위치/햄버거
+                       <input type="radio" name="category" value="bob" aria-label="주먹밥/김밥"> 주먹밥/김밥
+                      <%end%>
+                  </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">판매처</label>
+              <div class="col-lg-4">
+            <!--    <input type="text" class="form-control"  name="store_info" required>-->
+                 <span class="input-group-addon">
+                    <%if @this_post.store_info == "CU"%>
+                        <input type="radio" name="store_info" value="CU" checked aria-label="CU">CU&nbsp;
+                        <input type="radio" name="store_info" value="GS25" aria-label="GS25">GS25&nbsp;
+                        <input type="radio" name="store_info" value="seveneleven" aria-label="7-11">세븐일레븐
+                    <%elsif @this_post.store_info == "GS25"%>
+                        <input type="radio" name="store_info" value="CU" aria-label="CU">CU&nbsp;
+                        <input type="radio" name="store_info" value="GS25" checked aria-label="GS25">GS25&nbsp;
+                        <input type="radio" name="store_info" value="seveneleven" aria-label="7-11">세븐일레븐
+                    <%elsif @this_post.store_info == "seveneleven"%>
+                        <input type="radio" name="store_info" value="CU" aria-label="CU">CU&nbsp;
+                        <input type="radio" name="store_info" value="GS25" aria-label="GS25">GS25&nbsp;
+                        <input type="radio" name="store_info" value="seveneleven" checked aria-label="7-11">세븐일레븐
+                    <%else%>
+                        <input type="radio" name="store_info" value="CU" aria-label="CU">CU&nbsp;
+                        <input type="radio" name="store_info" value="GS25" aria-label="GS25">GS25&nbsp;
+                        <input type="radio" name="store_info" value="seveneleven" aria-label="7-11">세븐일레븐
+                    <%end%>
+                  </span>
+            
+              </div>
+              <label class="col-lg-2 control-label">어울리는 시간대</label>
+              <div class="col-lg-4">
+              <!--  <input type="text" class="form-control"  name="prefer_time"> -->
+                <span class="input-group-addon">
+                    <%if @this_post.prefer_time == "morning"%>
+                     <input type="radio" name="prefer_time" value="morning" aria-label="morning" checked>아침&nbsp;
+                     <input type="radio" name="prefer_time" value="lunch" aria-label="lunch">점심&nbsp;
+                     <input type="radio" name="prefer_time" value="dinner" aria-label="dinner">저녁
+                    <%elsif @this_post.prefer_time == "lunch" %>
+                     <input type="radio" name="prefer_time" value="morning" aria-label="morning">아침&nbsp;
+                     <input type="radio" name="prefer_time" value="lunch" aria-label="lunch"  checked>점심&nbsp;
+                     <input type="radio" name="prefer_time" value="dinner" aria-label="dinner">저녁
+                    <%elsif @this_post.prefer_time == "dinner" %>
+                     <input type="radio" name="prefer_time" value="morning" aria-label="morning">아침&nbsp;
+                     <input type="radio" name="prefer_time" value="lunch" aria-label="lunch">점심&nbsp;
+                     <input type="radio" name="prefer_time" value="dinner" aria-label="dinner" checked>저녁
+                    <%else%>
+                     <input type="radio" name="prefer_time" value="morning" aria-label="morning">아침&nbsp;
+                     <input type="radio" name="prefer_time" value="lunch" aria-label="lunch">점심&nbsp;
+                     <input type="radio" name="prefer_time" value="dinner" aria-label="dinner">저녁
+                    <%end%>
+                  </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">가격</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control"  name="price" value="<%=@this_post.price%>" required>
+              </div>
+              <label class="col-lg-2 control-label">칼로리</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control"  name="kcal" value="<%=@this_post.kcal%>" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label">상세 설명</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" rows="3"  name="content"><%=@this_post.post_content%></textarea>             
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">이미지 첨부</label>
+              <div class="col-lg-10">
+              <input type=file name="image_file">
+              <span class="help-block">* 직접 찍은 사진을 첨부해주세요</span>
+               </div>
+            </div>
+           
+      
+        
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <a href="/" class="btn btn-default" role="button">메인으로</a>
+                <button type="submit" class="btn btn-primary">등록</button>
+              </div>
+            </div>
+            
+          </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-2"></div>
+</div>    
+ 

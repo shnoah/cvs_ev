@@ -1,0 +1,24 @@
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <form class="form-horizontal" action="/home/modify_process/<%=@this_post.id%>" method="POST">
+          <fieldset>
+            <legend>글 수정</legend>
+            
+            <div class="form-group">
+              <label class="col-lg-4">
+                  <input type="password" class="form-control" name="delete_password" placeholder="비밀번호를 입력해주세요" required>
+              </label>
+              <div class="col-lg-8">
+                        <a href="/home/detail/<%=@this_post.id%>" class="btn btn-default" role="button">돌아가기</a>
+                <button type="submit" class="btn btn-primary">수정</button>
+        
+              </div>
+            </div>
+          </fieldset>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>    
+ 
