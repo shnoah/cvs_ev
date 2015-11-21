@@ -9,10 +9,6 @@ class HomeController < ApplicationController
   def testpage
     @posts = Review.all
   end
-
-  def write
-    
-  end
   
   def write_process
 
@@ -38,8 +34,7 @@ class HomeController < ApplicationController
     
   end
   
-  
-  
+    
   def detail
     @this_post=Review.find(params[:id])
     

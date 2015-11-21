@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2008311837 노승호</title>
+    <style>
+  
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size:20px;
+    background-color:black;
+    font-family:"맑은 고딕";
+    color:lightgray;
+    
+}
+
+
+hr{
+  border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, white, black, black);
+    
+}
+
+
+ table{
+	
+	border: thin dotted gray;
+	margin-left:auto; 
+  margin-right:auto;
+}
+
+th{
+   background-color:lightgray;
+   color:black;
+   padding-top:20px;
+   padding-bottom:20px;
+}
+
+
+td{
+	border: thin dotted gray;
+	margin: 5px;
+	padding:10px;
+}
+
+#container {
+    display: table;
+    width:100%;
+
+    }
+
+  #row  {
+    display: table-row;
+
+    }
+
+  #left, #right, #middle {
+    display: table-cell;
+    text-align:center;
+
+    }
+
+
+.title {
+  color:white;
+}
+
+.center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    
+}
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+}
+
+.nav-ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top:15px;
+}
+
+.nav-li {display: inline;}
+
+
+a:link, a:visited {
+   
+    width: 120px;
+    font-size:15pt;
+    color: lightgray;
+    
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+  color:white;
+}
+  
+
+.video-overlay {
+    position: absolute;
+    
+    top: 290px;
+ 
+    margin-left:auto;
+    margin-right:auto;
+    padding: 5px 5px;
+    font-size: 66px;
+    color: white;
+    background-color: rgba(50, 50, 50, 0.3);
+}  
+
+.header-unit {
+  height: 1300px;
+  border: 0px;
+  top:30;
+  left:9;
+  position: relative;
+  padding: 0px;
+}
+
+#video-container {
+	position: absolute;
+}
+
+#video-container {
+	top:0%;
+	left:0%;
+	height:100%;
+	width:100%;
+	overflow: hidden;
+}
+
+video {
+	position:absolute;
+	z-index:-1;
+}
+
+video.fillWidth {
+	width: 100%;
+}
+
+
+
+
+  
+  </style>
+</head>
+<body>
+    
+  <!-- navbar -->
+  <nav class="fixed-nav-bar">
+    <ul class="nav-ul">
+      <li class="nav-li"><a href="#video-container">&nbsp;&nbsp;프로필</a></li>
+      <li class="nav-li"><a href="#activity-header">&nbsp;&nbsp;활동 내용</a></li>
+      <li class="nav-li"><a href="#development-header">&nbsp;&nbsp;포트폴리오</a></li>
+      <li class="nav-li"><a href="#contact-header">&nbsp;&nbsp;연락처</a></li>
+    </ul>
+  </nav>
+ 
+ 
+ <div class="header-unit">
+    <div id="video-container">
+      <div class="video-overlay">&nbsp;&nbsp;노승호&nbsp;
+                                <br>&nbsp;&nbsp;Seungho Noah&nbsp;
+                                <p></p>
+                                &nbsp;성균관대학교&nbsp;<br>
+                                &nbsp;경제학과&nbsp;<br>
+                                &nbsp;융합소프트웨어&nbsp;
+                                <p></p>
+                               &nbsp; C, Java, Ruby&nbsp;
+      </div>
+      
+      <video autoplay loop class="fillWidth">
+        <source src="https://s3-ap-northeast-1.amazonaws.com/skku/typing1.mp4" type="video/mp4"/>
+        <source src="https://s3-ap-northeast-1.amazonaws.com/skku/typing1.webm" type="video/webm"/>
+        Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+    </div>
+  </div>
+  
+    <div id="activity-header"></div>
+    <br>
+
+    <div class="center">
+      <h1 class="title">활동 내용</h1>
+      <hr />
+    </div>
+    <div class="center">
+      <table border=1>
+        <tr>
+          <th>활동명</th>
+          <th>활동내용</th>
+        </tr>
+        <tr>
+          <td>제14대 경제대학 학생회 문화홍보국원</td>
+         
+          <td>- 온오프라인 홍보 업무 담당</td>
+        </tr>
+
+        <tr>
+          <td>제15대 경제대학 학생회 홍보기획국장</td>
+         
+          <td>- 새내기 새로배움터 및 멘토링 프로그램 기획 및 진행
+          <br>- 온오프라인 홍보 업무 담당  </td>
+        </tr>
+        <tr>
+          <td>멋쟁이 사자처럼 3기 성균관대 대표</td>
+          <td>- 루비 온 레일즈 및 AWS 등 웹서비스 교육 이수
+          <br>- 동아리 내 아이디어 및 투표 시스템 기획, 개발, 관리
+          </td>
+        </tr>
+  
+        <tr>
+          <td>제3회 외교부 워킹홀리데이 컨텐츠 공모전</td>
+          <td id="development-header">- 영상부문 우수상</td>
+        </tr>
+      </table>
+   </div>  
+
+  <!-- development -->
+  <div class="center">
+      <h1 class="title">포트폴리오</h1>
+      <hr>
+    </div>
+  <div class="center">
+    
+   
+   
+    <div>
+      <h3><strong>종합 설계 프로젝트</strong></h3>
+      <p>자동 주차, 예측 서스펜션 시스템을 가진 자동차 프로토타입<br>
+      - 빛 센서, 적외선 센서, 자이로 센서 사용<br>
+      - C 기반 알고리즘 설계</p>
+    </div>
+    
+    <div>
+      <center>
+      <iframe width="853" height="480" src="https://www.youtube.com/embed/yKFh5cVj298?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </center>
+    </div>
+    
+    
+    <div>
+      <h3><strong>아이디어톤</strong></h3>
+      <p>동아리 아이디어 공유 및 투표를 위한 웹페이지
+      <br>- 아이디어 등록, 투표, 좋아요, 태그 시스템
+      <br>- RoR 기반 백엔드 개발 및 AWS 배포,유지보수
+      <br>- <a href="http://idea.likelion.net" target="_blank">http://idea.likelion.net</a></p>
+    </div>
+    
+    <div>
+      <center><img src="img/p2.png"></center></div>
+    </div>
+    
+ 
+    
+   <!-- contact -->
+    <div  class="center" id="contact-header">
+      <h1 class="title">연락처</h1>
+      <hr>
+    </div>
+    
+    <div class="center">
+      <div id="container">
+        <div id="row">
+          <div id="left">
+            <h4><img src="img/phone.png" width="100" height="100"></h4>
+            <p>(+82)10-5120-8808</p>
+          </div>
+          
+          <div id="middle">
+            <h4><a href="mailto:shnoah@gmail.com" class="list-group-item" target="_blank"><img src="img/mail.png" width="100" height="100"></a></h4>
+            <p><a href="mailto:shnoah@gmail.com" class="list-group-item" target="_blank">shnoah@gmail.com</a><br>
+          </div>
+          
+          <div id="right">
+            <h4><a href="http://fb.com/shnoah23" class="list-group-item" target="_blank"><img src="img/facebook.png" width="100" height="100"></a></h4>
+            <p><a href="http://fb.com/shnoah23" class="list-group-item" target="_blank">fb.com/shnoah23</a>
+            </p>
+          </div>
+         </div>
+      </div>
+    </div>
+
+
+  </div>
+   
+    
+</body>
+</html>
