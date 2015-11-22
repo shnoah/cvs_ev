@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005075112) do
+ActiveRecord::Schema.define(version: 20151122065046) do
+
+  create_table "freeboards", force: :cascade do |t|
+    t.integer  "hits"
+    t.string   "post_name"
+    t.string   "post_pwd"
+    t.string   "post_title"
+    t.text     "post_content"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "replies", force: :cascade do |t|
     t.integer  "review_id"

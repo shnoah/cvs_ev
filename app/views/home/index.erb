@@ -1,10 +1,13 @@
+  <link href="http://cdn.rawgit.com/singihae/Webfonts/master/style.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
 
-.photo_main {position: relative;}
-.photo_main_up{ position: absolute; left: 0; bottom:0; 
-                font-size: 1.83em;
-                margin-bottom:5px;              
+  .jua {font-family:'BM JUA','배달의민족 주아';}
+  .hana{font-family:'BM HANNA','배달의민족 한나'; }
+  .photo_main {position: relative;}
+  .photo_main_up{ position: absolute; left: 0; bottom:0; 
+  font-size: 1.83em;
+  margin-bottom:5px;              
  }
 </style>
 
@@ -75,7 +78,7 @@
                   <% unless item.post_title.length > 14 %>
                     <h2 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title %></h2>
                   <% else %>
-                    <h2 style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title.first(13)+"..." %></h2>
+                    <h2 class="jua" style="font-weight: 800; color:#DD4814;letter-spacing: 0px;"><%= item.post_title.first(13)+"..." %></h2>
                   <% end %>
                   
                   <!-- content -->
